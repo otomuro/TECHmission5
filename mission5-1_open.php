@@ -74,8 +74,8 @@
     }elseif($del_num != ""){
         //削除番号指定後
         $sql = "SELECT * FROM mission5";
-        $stem = $pdo -> query($sql);
-        $results = $stem -> fetchAll();
+        $stmt = $pdo -> query($sql);
+        $results = $stmt -> fetchAll();
         foreach($results as $row){
             if($del_num == $row["id"] && $row["pass"] == $_POST["del_pass"]){
                 $id = $del_num;
@@ -94,8 +94,8 @@
     }elseif($re_num != ""){
         //編集番号指定後
         $sql = "SELECT * FROM mission5";
-        $stem = $pdo -> query($sql);
-        $results = $stem -> fetchAll();
+        $stmt = $pdo -> query($sql);
+        $results = $stmt -> fetchAll();
         foreach($results as $row){
             if($re_num == $row["id"] && $row["pass"] == $_POST["re_pass"]){
                 $re_name = $row["name"];
